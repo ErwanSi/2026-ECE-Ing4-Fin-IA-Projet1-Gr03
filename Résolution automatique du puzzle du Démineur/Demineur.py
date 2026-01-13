@@ -1,17 +1,17 @@
 import random
 import numpy as np
 
-def creation_demineur(taille, bombes):
+def creation_demineur(taille, bombes, x, y):
     demineur = np.zeros((taille, taille), dtype=int)
 
     i = 0
     while i < bombes:
-        x = random.randint(0, taille-1)
-        y = random.randint(0, taille-1)
+        xr = random.randint(0, taille-1)
+        yr = random.randint(0, taille-1)
 
-        if demineur[x][y] == 0:
+        if demineur[xr][yr] == 0 and not ((xr == x-1 and yr == y-1) or (xr == x-1 and yr == y) or (xr == x-1 and yr == y+1) or (xr == x and yr == y-1) or (xr == x and yr == y) or (xr == x and yr == y+1) or (xr == x+1 and yr == y-1) or (xr == x+1 and yr == y) or (xr == x+1 and yr == y+1)):
             #Le niméro 9 représente une mine
-            demineur[x][y] = 9
+            demineur[xr][yr] = 9
             i+=1
 
 
@@ -91,15 +91,16 @@ def jeu(demineur, mask, taille, x, y):
 taille = 10
 bombes = 7
 
-demineur = creation_demineur(taille, bombes)
+x, y = 3, 3
+
+demineur = creation_demineur(taille, bombes, x,y)
 print(demineur)
 demineur = mine_adjacent(demineur, taille)
 print(demineur)
-
 mask = np.ones(demineur.shape, dtype=int)
-
+jeu(demineur, mask, taille, 3, 3)
 affichage(demineur, taille, mask)
 
-jeu(demineur, mask, taille, 3, 3)
+jeu(demineur, mask, taille, 8, 8)
 
 affichage(demineur, taille, mask)
