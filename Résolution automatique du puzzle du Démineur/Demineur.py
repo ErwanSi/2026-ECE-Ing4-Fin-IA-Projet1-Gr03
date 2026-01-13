@@ -63,20 +63,43 @@ def affichage(demineur, taille, mask):
     print()
     print()
 
-def jeu(demineur, mask, x, y):
+def jeu(demineur, mask, taille, x, y):
     if demineur[x][y] == 9:
         print("Perdu")
+
+    if demineur[x][y] == 0 and mask[x][y] == 1:
+        mask[x][y] = 0
+        if x != 0:
+            if y != 0:
+                jeu(demineur, mask, taille, x-1, y-1)
+            jeu(demineur, mask, taille, x-1, y)
+            if y != taille-1:
+                jeu(demineur, mask, taille, x-1, y+1)
+        if y != 0:
+            jeu(demineur, mask, taille, x, y-1)
+        if y != taille-1:
+            jeu(demineur, mask, taille, x, y+1)
+        if x != taille-1:
+            if y != 0:
+                jeu(demineur, mask, taille, x+1, y-1)
+            jeu(demineur, mask, taille, x+1, y)
+            if y != taille-1:
+                jeu(demineur, mask, taille, x+1, y+1)
+
     mask[x][y] = 0
 
-demineur = creation_demineur(10, 7)
+taille = 10
+bombes = 7
+
+demineur = creation_demineur(taille, bombes)
 print(demineur)
-demineur = mine_adjacent(demineur, 10)
+demineur = mine_adjacent(demineur, taille)
 print(demineur)
 
 mask = np.ones(demineur.shape, dtype=int)
 
-affichage(demineur, 10, mask)
+affichage(demineur, taille, mask)
 
-jeu(demineur, mask, 3, 3)
+jeu(demineur, mask, taille, 3, 3)
 
-affichage(demineur, 10, mask)
+affichage(demineur, taille, mask)
