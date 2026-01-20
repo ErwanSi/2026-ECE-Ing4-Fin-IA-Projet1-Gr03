@@ -14,16 +14,12 @@ def choix_chiffre(max_val, coo):
             print("❌ Entre un nombre valide.")
     return n
 
-max_val = 10
-
-
-
 
 taille = 10
 bombes = 7
 
-y = choix_chiffre(max_val, "x")
-x = choix_chiffre(max_val, "y")
+y = choix_chiffre(taille, "x")
+x = choix_chiffre(taille, "y")
 
 demineur = d.creation_demineur(taille, bombes, x, y)
 print(demineur)
@@ -34,8 +30,8 @@ d.jeu(demineur, mask, taille, x, y)
 d.affichage(demineur, taille, mask)
 
 while d.fin_jeu(demineur, mask, taille, bombes):
-    y = choix_chiffre(max_val, "x")
-    x = choix_chiffre(max_val, "y")
+    y = choix_chiffre(taille, "x")
+    x = choix_chiffre(taille, "y")
 
     d.jeu(demineur, mask, taille, x, y)
     d.affichage(demineur, taille, mask)
