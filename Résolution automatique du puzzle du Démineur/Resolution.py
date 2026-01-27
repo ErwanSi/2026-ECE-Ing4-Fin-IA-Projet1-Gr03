@@ -137,6 +137,12 @@ def probabilites(plat):
 
     return probs
 
+def meilleure_case(probs):
+    for c, p in probs.items():
+        if p == 0:
+            return c
+    min_proba = min(probs.values())
+    return min(probs, key=probs.get)
 
 demineur = d.creation_demineur(10, 10, 3,3)
 mask = np.ones(demineur.shape, dtype=int)
@@ -155,3 +161,5 @@ print(liste_bordure(plat))
 print(contraintes(plat))
 probs = probabilites(plat)
 print(probs)
+x, y = meilleure_case(probs)
+print(x,y)
