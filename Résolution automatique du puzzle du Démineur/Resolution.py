@@ -1,5 +1,4 @@
 import numpy as np
-import Demineur as d
 
 # Cette fonction permet d'avoir un plateau de jeu comme le joueur voit
 def plateau(demineur, mask, taille):
@@ -141,25 +140,11 @@ def meilleure_case(probs):
     for c, p in probs.items():
         if p == 0:
             return c
-    min_proba = min(probs.values())
     return min(probs, key=probs.get)
 
-demineur = d.creation_demineur(10, 10, 3,3)
-mask = np.ones(demineur.shape, dtype=int)
 
-demineur = d.mine_adjacent(demineur, 10)
-
-d.jeu(demineur, mask, 10, 3, 3)
-
-d.affichage(demineur,10, mask)
-
-plat = plateau(demineur, mask, 10)
-print(plat)
-bordure(plat, 10)
-print(liste_bordure(plat))
-
-print(contraintes(plat))
-probs = probabilites(plat)
-print(probs)
-x, y = meilleure_case(probs)
-print(x,y)
+def Resolution(demineur, mask, taille, bombe):
+    plat = plateau(demineur, mask, taille)
+    bordure(plat, taille)
+    probs = probabilites(plat)
+    return meilleure_case(probs)
