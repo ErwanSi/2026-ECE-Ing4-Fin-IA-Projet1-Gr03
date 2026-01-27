@@ -60,7 +60,85 @@ def liste_bordure(plat):
                 variables.append((i, j))
     return variables
 
-demineur = d.creation_demineur(10, 20, 3,3)
+def voisins(x, y, taille):
+    for dx in [-1, 0, 1]:
+        for dy in [-1, 0, 1]:
+            if dx == 0 and dy == 0:
+                continue
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < taille and 0 <= ny < taille:
+                yield nx, ny
+
+def contraintes(plat):
+    taille = len(plat)
+    contraintes = []
+
+    for i in range(taille):
+        for j in range(taille):
+            if plat[i][j] >= 0:  # case découverte
+                inconnues = []
+                for nx, ny in voisins(i, j, taille):
+                    if plat[nx][ny] == -2:
+                        inconnues.append((nx, ny))
+
+                if inconnues:
+                    contraintes.append((inconnues, plat[i][j]))
+
+    return contraintes
+
+def contraintes_valides(contraintes, assignation):
+    for cases, total in contraintes:
+        somme = 0
+        libres = 0
+
+        for c in cases:
+            if c in assignation:
+                somme += assignation[c]
+            else:
+                libres += 1
+
+        if somme > total:
+            return False
+        if somme + libres < total:
+            return False
+
+    return True
+
+def backtracking(variables, contraintes, assignation, stats):
+    if len(assignation) == len(variables):
+        stats["total"] += 1
+        for v in assignation:
+            if assignation[v] == 1:
+                stats["mines"][v] += 1
+        return
+
+    v = variables[len(assignation)]
+
+    for valeur in [0, 1]:
+        assignation[v] = valeur
+        if contraintes_valides(contraintes, assignation):
+            backtracking(variables, contraintes, assignation, stats)
+        del assignation[v]
+
+def probabilites(plat):
+    variables = liste_bordure(plat)
+    cons = contraintes(plat)
+
+    stats = {
+        "total": 0,
+        "mines": {v: 0 for v in variables}
+    }
+
+    backtracking(variables, cons, {}, stats)
+
+    probs = {}
+    for v in variables:
+        probs[v] = stats["mines"][v] / stats["total"]
+
+    return probs
+
+
+demineur = d.creation_demineur(10, 10, 3,3)
 mask = np.ones(demineur.shape, dtype=int)
 
 demineur = d.mine_adjacent(demineur, 10)
@@ -73,3 +151,7 @@ plat = plateau(demineur, mask, 10)
 print(plat)
 bordure(plat, 10)
 print(liste_bordure(plat))
+
+print(contraintes(plat))
+probs = probabilites(plat)
+print(probs)
