@@ -47,8 +47,8 @@ market-making/
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/yourusername/market-making-inventory.git
-cd market-making-inventory
+git clone https://github.com/ErwanSi/2026-ECE-Ing4-Fin-IA-Projet1-Gr03.git
+cd 2026-ECE-Ing4-Fin-IA-Projet1-Gr03
 ```
 
 ### Step 2: Create Virtual Environment
@@ -146,7 +146,7 @@ Tests strategies on real Bitcoin price history (downloaded via Binance API).
 python experiments/run_real_data_backtest.py
 ```
 *Features:*
-- Downloads 1000m of BTC/USDT 1m candles.
+- Downloads 10000m of BTC/USDT 1m candles.
 - Estimates volatility from real data.
 - Replays the exact price path.
 
