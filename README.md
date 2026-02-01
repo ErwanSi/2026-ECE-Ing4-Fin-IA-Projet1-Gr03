@@ -15,14 +15,14 @@ To provide a modular, reproducible, and extensible codebase for researching and 
 
 ## Architecture
 ```
-market-making-inventory/
+market-making/
 ├── src/
 │   ├── models/       # Analytical models (Avellaneda-Stoikov)
 │   ├── solvers/      # HJB (SciPy) and CSP (OR-Tools) solvers
 │   ├── data/         # Simulators and Price generators
 │   └── rl_env/       # Gymnasium MarketMakingEnv
-├── experiments/      # Backtesting scripts
-├── docs/             # Mathematical documentation and State of the Art
+├── Experiments/      # Backtesting scripts
+├── Documentations/             # Mathematical documentation and State of the Art
 └── requirements.txt
 ```
 
