@@ -1,0 +1,1 @@
+https://gamma.app/docs/Wealth-Planner-AI-novn14sijtcyids?mode=doc
