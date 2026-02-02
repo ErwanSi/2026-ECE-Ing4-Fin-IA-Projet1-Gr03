@@ -1,0 +1,111 @@
+.simulation-panel {
+  padding: 20px;
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+}
+
+.simulation-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.simulation-input label {
+  font-weight: bold;
+}
+
+.simulation-input input {
+  width: 100%;
+}
+
+.btn-simulate {
+  width: 100%;
+  background-color: #2196F3;
+}
+
+.simulation-result {
+  margin-top: 20px;
+}
+
+.result-summary {
+  margin-bottom: 20px;
+}
+
+.result-status {
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.result-status.success {
+  background-color: var(--green);
+}
+
+.result-status.failure {
+  background-color: #f44336;
+}
+
+.result-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.simulation-turns h4 {
+  margin-bottom: 10px;
+}
+
+.turn-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.turn-number {
+  font-weight: bold;
+  min-width: 30px;
+}
+
+.turn-guess {
+  display: flex;
+  gap: 3px;
+}
+
+.mini-cell {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.mini-cell.green {
+  background-color: var(--green);
+}
+
+.mini-cell.yellow {
+  background-color: var(--yellow);
+}
+
+.mini-cell.gray {
+  background-color: var(--gray);
+}
+
+.turn-candidates {
+  margin-left: auto;
+  color: var(--light-gray);
+  font-size: 14px;
+}

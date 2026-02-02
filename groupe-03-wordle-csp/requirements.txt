@@ -1,0 +1,13 @@
+# Dépendances pour le solveur Wordle CSP
+# Projet universitaire ECE - IA Symbolique et Exploratoire
+
+# Tests
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Type checking (optionnel mais recommandé)
+mypy>=1.5.0
+
+# Formatage de code (optionnel)
+black>=23.7.0
+flake8>=6.1.0

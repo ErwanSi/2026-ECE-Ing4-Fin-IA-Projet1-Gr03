@@ -1,0 +1,120 @@
+.controls {
+  padding: 20px;
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.control-group select,
+.control-group input {
+  width: 100%;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #2196F3;
+  margin-top: 10px;
+}
+
+.suggestion-box {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: rgba(106, 170, 100, 0.2);
+  border-radius: 4px;
+}
+
+.suggestion-box h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.suggestion-word {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+
+.no-suggestion {
+  text-align: center;
+  color: var(--light-gray);
+  padding: 15px;
+}
+
+.manual-input {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.manual-input h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.input-row input {
+  flex: 1;
+}
+
+.help-text {
+  font-size: 12px;
+  color: var(--light-gray);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.help-text-small {
+  font-size: 11px;
+  color: var(--light-gray);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.error-message {
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.success-message {
+  background-color: var(--green);
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
