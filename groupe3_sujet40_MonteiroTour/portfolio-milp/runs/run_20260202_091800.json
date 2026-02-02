@@ -1,0 +1,64 @@
+{
+  "tickers": [
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "JPM",
+    "XOM",
+    "JNJ",
+    "NVDA",
+    "PG"
+  ],
+  "start": "2018-01-01",
+  "lookback": 252,
+  "rebalance": 21,
+  "n_scen": 60,
+  "constraints": {
+    "K": 5,
+    "w_max": 0.6,
+    "Q": 1000,
+    "q_min": 1,
+    "tc_per_lot": 5,
+    "beta": 0.95,
+    "lambda": 1.0
+  },
+  "metrics": {
+    "equal": {
+      "mean": 0.2860009322500401,
+      "vol": 0.22032553687598,
+      "sharpe": 1.2980834464550897,
+      "maxDD": -0.30479289829015155
+    },
+    "cvxpy": {
+      "mean": 0.2859828612567842,
+      "vol": 0.2203276885492505,
+      "sharpe": 1.2979887509365742,
+      "maxDD": -0.3047937747230475
+    },
+    "cpsat": {
+      "mean": 0.2860009322500401,
+      "vol": 0.22032553687598,
+      "sharpe": 1.2980834464550897,
+      "maxDD": -0.30479289829015155
+    }
+  },
+  "diagnostics": {
+    "avg_turnover_cvx": 2.7998688887764638e-05,
+    "avg_turnover_cps": 0.0,
+    "avg_selected_cps": 10.0,
+    "statuses_last10": [
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID",
+      "CpSolverStatus.MODEL_INVALID"
+    ]
+  }
+}

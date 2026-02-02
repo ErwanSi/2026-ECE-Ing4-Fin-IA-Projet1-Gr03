@@ -1,0 +1,64 @@
+{
+  "timestamp": "20260202_100438",
+  "tickers": [
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "JPM",
+    "XOM",
+    "JNJ",
+    "NVDA",
+    "PG"
+  ],
+  "start": "2018-01-01",
+  "train_len": 504,
+  "test_len": 21,
+  "Q": 1000,
+  "K": 5,
+  "q_min": 1,
+  "w_max": 0.6,
+  "tc_per_lot": 5,
+  "beta": 0.95,
+  "lambda_cvar": 1.0,
+  "cvx_lam": 0.3,
+  "cvx_gamma_tc": 0.05,
+  "metrics": {
+    "equal_weight": {
+      "mean": 0.2638785379478509,
+      "vol": 0.22976014909552003,
+      "sharpe": 1.148495676846669,
+      "maxDD": -0.3047928606817548
+    },
+    "cvxpy": {
+      "mean": 0.2638790025696965,
+      "vol": 0.2297607538236518,
+      "sharpe": 1.1484946762153796,
+      "maxDD": -0.30479280734902225
+    },
+    "cpsat": {
+      "mean": 0.1061037089348973,
+      "vol": 0.1840415056049615,
+      "sharpe": 0.5765205440268736,
+      "maxDD": -0.2907159266581292
+    }
+  },
+  "diagnostics": {
+    "avg_turnover_cvx_L1": 4.1002302712233224e-07,
+    "avg_turnover_cps_lots": 557.9722222222222,
+    "avg_selected_assets_cps": 4.708333333333333,
+    "statuses_tail": [
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL",
+      "CpSolverStatus.OPTIMAL"
+    ]
+  }
+}

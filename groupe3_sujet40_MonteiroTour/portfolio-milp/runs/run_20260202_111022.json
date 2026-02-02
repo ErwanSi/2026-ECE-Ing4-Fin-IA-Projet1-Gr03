@@ -1,0 +1,69 @@
+{
+  "timestamp": "20260202_111022",
+  "tickers": [
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "JPM",
+    "XOM",
+    "JNJ",
+    "NVDA",
+    "PG"
+  ],
+  "start": "2018-01-01",
+  "train_len": 504,
+  "test_len": 21,
+  "Q": 1000,
+  "K": 5,
+  "q_min": 1,
+  "w_max": 0.6,
+  "cost_rate": 0.001,
+  "beta": 0.95,
+  "lambda_cvar": 1.0,
+  "turnover_cap_lots": 200,
+  "cvx_lam": 0.3,
+  "cvx_gamma_tc": 0.05,
+  "metrics": {
+    "equal_weight": {
+      "mean": 0.26387853657533733,
+      "vol": 0.22976012995152836,
+      "sharpe": 1.1484957665675364,
+      "maxDD": -0.304792930706528
+    },
+    "cvxpy": {
+      "mean": 0.26387899873718756,
+      "vol": 0.22976073467708238,
+      "sharpe": 1.1484947552420424,
+      "maxDD": -0.30479287747484396
+    },
+    "cpsat": {
+      "mean": 0.26387853657533733,
+      "vol": 0.22976012995152836,
+      "sharpe": 1.1484957665675364,
+      "maxDD": -0.304792930706528
+    }
+  },
+  "diagnostics": {
+    "avg_turnover_cvx_L1": 4.100230206460313e-07,
+    "avg_turnover_cvx_weight": 2.0501151032301565e-07,
+    "avg_turnover_cps_lots": 0.0,
+    "avg_turnover_cps_weight": 0.0,
+    "avg_cost_cvx": 2.0501151032301566e-10,
+    "avg_cost_cps": 0.0,
+    "avg_selected_assets_cps": 0.0,
+    "statuses_tail": [
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE",
+      "CpSolverStatus.INFEASIBLE"
+    ]
+  }
+}

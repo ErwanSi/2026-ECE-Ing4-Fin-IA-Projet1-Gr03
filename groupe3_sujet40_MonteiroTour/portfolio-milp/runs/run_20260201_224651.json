@@ -1,0 +1,58 @@
+{
+  "tag": "20260201_224651",
+  "universe": [
+    "AAPL",
+    "AMZN",
+    "GOOGL",
+    "JNJ",
+    "JPM",
+    "META",
+    "MSFT",
+    "NVDA",
+    "PG",
+    "XOM"
+  ],
+  "train_window": 252,
+  "rebalance_step": 21,
+  "cpsat": {
+    "Q": 1000,
+    "K": 5,
+    "q_min": 10,
+    "w_max": 0.6,
+    "tc_per_lot": 1,
+    "beta": 0.95,
+    "S_scenarios": 100,
+    "lambda_cvar": 20
+  },
+  "cvxpy": {
+    "lam": 10.0,
+    "gamma_tc": 0.2,
+    "w_max": 0.6
+  },
+  "results": {
+    "equal_weight": {
+      "mean": 0.24164070757999107,
+      "vol": 0.19493512302470473,
+      "sharpe": 1.23959553224981,
+      "max_drawdown": -0.29102834115080534,
+      "final_equity": 3.083872140995749
+    },
+    "cvxpy": {
+      "mean": 0.24164070757999112,
+      "vol": 0.19493512302470475,
+      "sharpe": 1.2395955322498102,
+      "max_drawdown": -0.291028341150805,
+      "final_equity": 3.08387214099576,
+      "avg_turnover_L1": 6.175615574477434e-17
+    },
+    "cpsat_cvar": {
+      "mean": 0.18129381076009513,
+      "vol": 0.15968736001220296,
+      "sharpe": 1.1353047025527947,
+      "max_drawdown": -0.18344552360375144,
+      "final_equity": 2.345568030610109,
+      "avg_turnover_lots": 1025.7333333333333,
+      "avg_selected_assets": 4.366666666666666
+    }
+  }
+}
