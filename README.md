@@ -1,4 +1,4 @@
-# Market Making
+# Gp03 - 51. Market Making   Hamza OUADOUDI/Erwan SIMON/Guillaume Orsini
 
 A scientifically rigorous implementation of **Optimal Market Making with Inventory Risk**, based on the frameworks of **Avellaneda-Stoikov (2008)** and **Guéant et al. (2013)**.
 
